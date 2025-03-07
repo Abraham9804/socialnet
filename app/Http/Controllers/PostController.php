@@ -17,7 +17,10 @@ class PostController extends Controller implements HasMiddleware
     }
    
     public function index(User $user){
-        //dd($user);
        return view('dashboard',compact('user'));
+    }
+
+    public function create(){
+        return view('posts.create');
     }
 }
