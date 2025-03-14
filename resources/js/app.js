@@ -1,6 +1,6 @@
 import './bootstrap';
-import initDropzone from './posts';
+import dropZoneCreatePost from './posts';
 
 document.addEventListener('DOMContentLoaded', () => {
-    initDropzone();
+    dropZoneCreatePost();
 });

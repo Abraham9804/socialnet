@@ -45,5 +45,6 @@
     <footer class="text-center mt-10 p-5 text-gray-500 font-bold uppercase">
         SocialNet {{now()->year}}
     </footer>
+    @stack('scripts')
 </body>
 </html>

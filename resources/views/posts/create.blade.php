@@ -16,12 +16,7 @@
             </form>
         </div> 
         <div class="md:w-1/2 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0">
-            <form method="POST" action="{{route('login')}}" novalidate>
-                @session('mensaje')
-                <p class="text-red-500 text-center mb-3">
-                    {{$value}}
-                </p>    
-                @endsession
+            <form method="POST" action="{{route('posts.store')}}" novalidate id="formDescripcion">
                 @csrf
                 <div class="mb-5">
                     <label for="titulo" class="mb-2 block uppercase text-gray-500 font-bold">Titulo</label>
@@ -33,12 +28,18 @@
                 </div>
 
                 <div class="mb-5">
-                    <label for="titulo" class="mb-2 block uppercase text-gray-500 font-bold">Descripcion</label>
-                    <textarea id="titulo" name="titulo" type="text" placeholder="Titulo de la publicacion"
-                    class="border border-gray-200 p-3 w-full rounded-lg @error("titulo") border-red-500 @enderror"> 
-                        {{old("titulo")}}
+                    <label for="descripcion" class="mb-2 block uppercase text-gray-500 font-bold">Descripcion</label>
+                    <textarea id="descripcion" name="descripcion" type="text" placeholder="Descripcion de la publicacion"
+                    class="border border-gray-200 p-3 w-full rounded-lg @error("descripcion") border-red-500 @enderror"> 
+                        {{old("descripcion")}}
                     </textarea>
-                    @error("titulo")
+                    @error("descripcion")
+                        <p class="text-red-500">{{$message}}</p>
+                    @enderror
+                </div>
+                <div class="mb-5">
+                    <input type="hidden" name="imagen" id="imagen" value="{{old("imagen")}}" class="border border-gray-200 p-3 w-full rounded-lg @error("imagen") border-red-500 @enderror">
+                    @error('imagen')
                         <p class="text-red-500">{{$message}}</p>
                     @enderror
                 </div>
@@ -47,6 +48,4 @@
             </form>
         </div>
     </div>
-
-    
 @endsection
