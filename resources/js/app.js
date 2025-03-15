@@ -1,4 +1,3 @@
-import './bootstrap';
 import dropZoneCreatePost from './posts';
 
 document.addEventListener('DOMContentLoaded', () => {

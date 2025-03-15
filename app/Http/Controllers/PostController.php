@@ -28,13 +28,11 @@ class PostController extends Controller implements HasMiddleware
 
     public function store(Request $request){
        $request->validate([
-            'titulo' => ['required'],
-            'descripcion' => ['required'],
+            'descripcion' => 'required',
             'imagen' => 'required'
        ]);
 
        Post::create([
-        'titulo' => $request->titulo,
         'descripcion' => $request->descripcion,
         'imagen' => $request->imagen,
         'user_id' => Auth::user()->id

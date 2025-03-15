@@ -13,7 +13,6 @@ class ImagenController extends Controller
     {   
         $imagen = $request->file('imagen');
         $extension = $request->file('imagen')->extension();
-
         $nombreImagen = Str::uuid().".".$extension;
         $imagenServidor = Image::read($imagen);
         $imagenServidor->resize(300, 200);
