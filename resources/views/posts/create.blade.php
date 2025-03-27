@@ -5,13 +5,13 @@
 @endsection
 
 @section('contenido')
-    <div class="md:flex md:items-center flex-col ">
-        <div class="md:w-1/2 px-10 bg-white pt-10">
+    <div class="flex items-center flex-col ">
+        <div class="w-4/5 md:w-1/2 px-10 bg-white pt-10">
             <form action={{route('imagenes.store')}} class="dropzone border-dashed border-1 w-full h-96 text-center flex items-center justify-center rounded cursor-pointer" id="my-dropzone">
                 @csrf
             </form>
         </div> 
-        <div class="md:w-1/2 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0">
+        <div class="w-4/5 md:w-1/2 p-10 bg-white rounded-lg shadow-xl md:mt-0">
             <form method="POST" action="{{route('posts.store')}}" novalidate id="formDescripcion">
                 @csrf
                 <div class="mb-5">
@@ -30,8 +30,7 @@
                         <p class="text-red-500">{{$message}}</p>
                     @enderror
                 </div>
-                
-                <input type="submit" value="Publicar" class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-4/12 p-3 text-white rounded-lg float-right">
+                <input type="submit" value="Publicar" class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold md:w-4/12 p-3 text-white rounded-lg float-right">
             </form>
         </div>
     </div>

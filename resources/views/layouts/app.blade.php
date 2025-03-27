@@ -37,8 +37,8 @@
         </div>
     </header>
 
-    <main class="container mx-auto mt-10">
-        <h2 class="font-black text-center text-2xl mb-10">@yield("titulo")</h2>
+    <main class="container mx-auto mx-2 mt-10">
+        <h2 class="font-black text-center mb-10 text-xl md:text-2xl ">@yield("titulo")</h2>
         @yield("contenido")
     </main>
 
