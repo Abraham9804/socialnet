@@ -17,6 +17,9 @@
                 <p class="text-gray-800 text-sm mb-2 font-bold">0 <span class="font-normal">Publicaciones</span></p>
             </div>
         </div>
-
     </div>
+
+    @foreach($posts as $post)
+        <p>{{$post->titulo}}</p>
+    @endforeach
 @endsection
